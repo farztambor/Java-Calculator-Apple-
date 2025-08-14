@@ -136,7 +136,11 @@ public class Calculator {
                                 numDisplay /= 100; // converting to percentage
                                 displayLabel.setText(removeZeroDecimal(numDisplay));
                             }
-                        }else{
+                        } else if (Objects.equals(buttonValue, "√")) {
+                                double numDisplay = Double.parseDouble(displayLabel.getText());
+                                numDisplay = (Math.sqrt(numDisplay));
+                                displayLabel.setText(removeZeroDecimal(numDisplay));
+                        } else{
                             if(Objects.equals(buttonValue, ".")){
                                 if(!displayLabel.getText().contains(buttonValue)){
                                     displayLabel.setText(displayLabel.getText() + buttonValue);
